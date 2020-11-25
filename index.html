@@ -10,11 +10,15 @@
 <body>
 
     <div id='app'>
-        <input type="text" placeholder="Inserisci titolo" v-model='searchFilm'>
-        <button>Search</button>
+        <input type="text" 
+        placeholder="Inserisci titolo" v-model='searchFilm'
+        @keyup.enter="getFilms">
+        <button @click='getFilms'>Search</button>
 
         <ul>
-            <li>Titolo</li>
+            <li v-for='film in films'>
+                <p>{{film.title}}</p>
+            </li>
            
         </ul>
 
