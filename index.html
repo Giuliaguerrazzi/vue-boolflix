@@ -14,10 +14,14 @@
         placeholder="Inserisci titolo" v-model='searchFilm'
         @keyup.enter="getFilms">
         <button @click='getFilms'>Search</button>
+        
 
         <ul>
             <li v-for='film in films'>
-                <p>{{film.title}}</p>
+                <h2>Titolo: {{film.title}}</h2>
+            <p>Titolo originale: {{film.original_title}}</p>
+            <p>Lingua: {{film.original_language}}</p>
+            <p>Voto: {{film.vote_average}}</p>
             </li>
            
         </ul>

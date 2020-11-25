@@ -13,14 +13,15 @@ const app = new Vue({
                 }
             })
             .then (result => {
-                console.log(result)
+                console.log(result.data)
 
-                this.films = result.data.response;
+                this.films = result.data.results;
             })
             .catch (error => {
                 console.log(error);
             });
-        }
-      
+
+           this.searchFilm= '';
+        }      
     }
 }); 
