@@ -30,8 +30,8 @@
                     <span v-else>{{film.original_language}}</span>
                      
                 <p>Voto: {{film.vote_average}}
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
+                    <i v-for="star in getVote(film.vote_average)" class="fas fa-star"></i>
+                    <i v-for="star in (5 - getVote(film.vote_average))" class="far fa-star"></i>
                 </p>
             </li>
            

@@ -28,8 +28,8 @@ const app = new Vue({
            this.searchFilm= '';
         },
        
-        getVote(value) {
-            return value / 2;
+        getVote(vote) {
+            return Math.ceil(vote / 2);
         }
     }
 }); 
