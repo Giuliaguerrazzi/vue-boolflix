@@ -37,6 +37,28 @@
            
         </ul>
 
+
+        <ul>
+            <li v-for='serie in series'>
+                <h2>Titolo: {{film.title}}</h2>
+                 <p>Titolo originale: {{film.original_title}}</p>
+                <p>Lingua:</p>
+                    <span v-if="serie.original_language === 'it'">
+                        <img class='flag' src="it.png" alt="">
+                    </span>
+                    <span v-else if="serie.original_language === 'en'">
+                        <img class='flag' src="en.png" alt="">
+                    </span>
+                    <span v-else>{{serie.original_language}}</span>
+                     
+                <p>Voto: {{serie.vote_average}}
+                    <i v-for="star in getVote(serie.vote_average)" class="fas fa-star"></i>
+                    <i v-for="star in (5 - getVote(serie.vote_average))" class="far fa-star"></i>
+                </p>
+            </li>
+           
+        </ul>
+
     </div>
     
 
