@@ -4,6 +4,7 @@ const app = new Vue({
         searchInput: '',
         films: [],
         series: [],
+        availableFlags: ['it','en'],
     },
     methods: {
 
@@ -58,6 +59,14 @@ const app = new Vue({
        
         getVote(vote) {
             return Math.ceil(vote / 2);
-        }
+        },
+
+        langFlag(lang){
+            return this.availableFlags.includes(lang)
+        },
+
+        getFlag(lang){
+            return `${lang}.png`
+        },
     }
 }); 
