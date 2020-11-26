@@ -18,6 +18,12 @@
 
         <ul v-if='films.length > 0'>
             <li v-for='film in films'>
+                <img 
+                v-if='film.poster_path'
+                :src="`https://image.tmdb.org/t/p/w342${film.poster_path}`" alt="">
+
+                <img v-else
+                src="https://www.altavod.com/assets/images/poster-placeholder.png" alt="">
                 <h2>Titolo: {{film.title}} </h2>
                  <p>Titolo originale: {{film.original_title}}</p>
                 <p>Lingua:</p>
@@ -40,6 +46,13 @@
 
         <ul v-if='series.length > 0'>
             <li v-for='serie in series'>
+                <img 
+                v-if='serie.poster_path'
+                :src="`https://image.tmdb.org/t/p/w342${serie.poster_path}`" alt="">
+
+                <img v-else 
+                src="https://www.altavod.com/assets/images/poster-placeholder.png" alt="">
+
                 <h2>Titolo serie: {{serie.name}}</h2>
                 <p>Titolo originale: {{serie.original_name}}</p>
                 <p>Lingua:</p>

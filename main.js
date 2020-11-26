@@ -26,6 +26,7 @@ const app = new Vue({
                 console.log(result.data)
 
                 this.films = result.data.results;
+                console.log(result.data.results);
             })
             .catch (error => {
                 console.log(error);
