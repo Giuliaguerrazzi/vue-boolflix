@@ -6,18 +6,27 @@
 
 body {
     background-color: #4a4e69;
-    font-family: 'Sansita Swashed', cursive;
     font-family: 'Ubuntu', sans-serif;
+    
 }
 
 header {
     display: flex;
     justify-content: space-between;
     background-color: #2b2d42;
-}
+    height: 150px;
+} 
 
 header img {
     padding: 15px;
+}
+
+header span {
+    font-family: 'Sansita Swashed', cursive;
+    display: flex;
+    align-items: center;
+    color: #d90429;
+    font-size: 30px;
 }
 
 .research {
@@ -28,25 +37,26 @@ header img {
 
 .research input {
     border: 1px solid #8d99ae;
-    border-radius: 10px;
+    border-radius: 25px;
     margin-right: 20px;
     height: 25px;
+    padding: 15px;
 }
 
 .research button {
     background-color: #d90429;
     color: #fff;
     border: 1px solid transparent;
-    padding: 5px 10px;
+    padding: 7px 15px;
     border-radius: 15px;
     cursor: pointer;
+    margin-right: 15px;
 }
 
 
 .container {
-    
-}
 
+}
 
 .list {
     display: flex;
@@ -63,11 +73,30 @@ header img {
     background: #8d99ae;
     text-align: center;
     border-radius: 10px;
+    position: relative;
 }
 
-.list-result img {
-    border-radius: 5px;
+.plot {
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    top: 0px;
+    right: 0px;
+    font-size: 13px;
+    overflow-y: auto;
+    background: rgba(0,0,0,0.47);
+    height: 100%;
+    color:#fff;
+    padding: 25px 5px;
+    overflow-y: auto;
+    opacity: 0;
+    border-radius: 10px;
 }
+
+.list-result .plot:hover {
+    opacity: 1;
+}
+
 
 .list-result p i {
     color: #d90429;

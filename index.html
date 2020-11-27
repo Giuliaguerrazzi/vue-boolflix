@@ -17,8 +17,11 @@
     <div id='app'>
 
         <header>
+            <div>
+                <img src="logo.png" alt="">  
+            </div>     
 
-            <img src="logo.png" alt="">
+            <span>choose your entertainment</span>
 
             <div class='research'>
                 <input type="text" 
@@ -39,8 +42,11 @@
     
                     <img v-else class='no-image'
                     src="https://www.altavod.com/assets/images/poster-placeholder.png" alt="">
+
+                    <p class='plot'>{{film.overview}}</p>
+
                     <h2> {{film.title}} </h2>
-                     <p>Original title {{film.original_title}}</p>
+                     <p> {{film.original_title}}</p>
                     <p>Lingua:</p>
                         
                             <img v-if='langFlag(film.original_language)' class='flag' :src="getFlag(film.original_language)" alt="">
@@ -54,9 +60,8 @@
             </ul>
             
     
-    
+            
             <ul class='list' v-if='series.length > 0'>
-                <h3>Serie tv</h3>
                 <li class='list-result' v-for='serie in series'>
                     <img 
                     v-if='serie.poster_path'
@@ -64,6 +69,8 @@
     
                     <img v-else class='no-image'
                     src="https://www.altavod.com/assets/images/poster-placeholder.png" alt="">
+
+                    <p class='plot'>{{serie.overview}}</p>
     
                     <h2> {{serie.name}}</h2>
                     <p> {{serie.original_name}}</p>
